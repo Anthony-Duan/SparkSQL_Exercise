@@ -49,6 +49,13 @@
             <version>${spark.version}</version>
         </dependency>
 
+        <!--添加hive-jdbc依赖-->
+        <dependency>
+            <groupId>org.spark-project.hive</groupId>
+            <artifactId>hive-jdbc</artifactId>
+            <version>1.2.1.spark2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
