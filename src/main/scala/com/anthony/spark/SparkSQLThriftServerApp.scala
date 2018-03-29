@@ -4,9 +4,9 @@ import java.sql.DriverManager
 
 
 /**
-  * @Description: 使用JDBC的连接sparkSQL
-  * @Date: Created in 16:29 2018/3/28
-  * @Author: Anthony_Duan
+  * @ Description: 使用JDBC的连接sparkSQL
+  * @ Date: Created in 16:29 2018/3/28
+  * @ Author: Anthony_Duan
   */
 object SparkSQLThriftServerApp {
 

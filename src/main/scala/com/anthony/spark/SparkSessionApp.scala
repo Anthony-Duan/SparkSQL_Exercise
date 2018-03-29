@@ -3,9 +3,9 @@ package com.anthony.spark
 import org.apache.spark.sql.SparkSession
 
 /**
-  * @Description:
-  * @Date: Created in 08:59 2018/3/28
-  * @Author: Anthony_Duan
+  * @ Description:
+  * @ Date: Created in 08:59 2018/3/28
+  * @ Author: Anthony_Duan
   */
 object SparkSessionApp {
 

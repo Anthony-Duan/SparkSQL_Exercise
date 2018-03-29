@@ -4,9 +4,9 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.hive.HiveContext
 
 /**
-  * @Description:
-  * @Date: Created in 07:58 2018/3/28
-  * @Author: Anthony_Duan
+  * @ Description:
+  * @ Date: Created in 07:58 2018/3/28
+  * @ Author: Anthony_Duan
   */
 object HiveContextApp {
 

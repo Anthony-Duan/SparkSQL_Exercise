@@ -4,9 +4,9 @@ import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
-  * @Description: SQLContext的使用
-  * @Date: Created in 07:09 2018/3/28
-  * @Author: Anthony_Duan
+  * @ Description: SQLContext的使用
+  * @ Date: Created in 07:09 2018/3/28
+  * @ Author: Anthony_Duan
   */
 object SQLContextApp {
 
