@@ -16,7 +16,7 @@ object HiveContextApp {
     val sparkConf = new SparkConf()
 
     //    在生产上通过脚本的方式指定
-    //    sparkConf.setAppName("SQLContextApp").setMaster("local[2]")
+        sparkConf.setAppName("SQLContextApp").setMaster("local[2]")
 
     val sc = new SparkContext(sparkConf)
     val hiveContext = new HiveContext(sc)

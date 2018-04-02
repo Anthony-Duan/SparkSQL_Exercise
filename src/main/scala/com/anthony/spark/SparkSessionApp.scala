@@ -3,7 +3,7 @@ package com.anthony.spark
 import org.apache.spark.sql.SparkSession
 
 /**
-  * @ Description:
+  * @ Description: SparkSession的使用方法
   * @ Date: Created in 08:59 2018/3/28
   * @ Author: Anthony_Duan
   */
