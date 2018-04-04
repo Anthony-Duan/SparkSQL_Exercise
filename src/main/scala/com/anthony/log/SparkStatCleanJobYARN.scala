@@ -8,15 +8,17 @@ import org.apache.spark.sql.{SaveMode, SparkSession}
   * @ Date: Created in 14:04 2018/3/31
   * @ Author: Anthony_Duan
   */
-object SparkStatCleanJob {
+object SparkStatCleanJobYARN {
 
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession
-      .builder().appName("SparkStatCleanJob")
-      .config("spark.sql.parquet.compression.codec","gzip")//设置压缩格式
-      .master("local[2]").getOrCreate()
 
-    val accessRDD = spark.sparkContext.textFile("file:///Users/duanjiaxing/data/access.log")
+    if (args!=2){
+      println("Usage: SparkStatCleanJobYARN <inputPath><outPath>")
+    }
+    val Array(inputPath,outPath)=args
+    val spark = SparkSession.builder().getOrCreate()
+
+    val accessRDD = spark.sparkContext.textFile(inputPath)
 //    accessRDD.take(10).foreach(println)
 
 //    RDD=>DF
@@ -29,7 +31,7 @@ object SparkStatCleanJob {
       .write.format("parquet")//设置输出格式
       .mode(SaveMode.Overwrite)//设置保存模式  覆盖文件
       .partitionBy("day")//设置分区字段  这里按照day字段进行分区
-      .save("file:///Users/duanjiaxing/data/clean")
+      .save(outPath)
 
     spark.stop()
   }

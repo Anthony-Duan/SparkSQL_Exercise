@@ -15,6 +15,7 @@ object IpUtils {
 
   def main(args: Array[String]) {
     println(getCity("218.75.35.226"))
+
   }
 
 }

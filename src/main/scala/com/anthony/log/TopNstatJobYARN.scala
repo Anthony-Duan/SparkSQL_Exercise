@@ -1,29 +1,37 @@
 package com.anthony.log
 
 import org.apache.spark.sql.expressions.Window
-import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions._
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
 import scala.collection.mutable.ListBuffer
+
 /**
   * @ Description:
   * @ Date: Created in 12:39 2018/4/2
   * @ Author: Anthony_Duan
   */
-object TopNstatJob {
+object TopNstatJobYARN {
 
   def main(args: Array[String]): Unit = {
 
-    val spark = SparkSession.builder().master("local[2]").appName("TopNstatJob")
-      .config("spark.sql.sources.partitionColumnTypeInference.enabled",false)
+    if (args.length!=2){
+      println("Usage: TopNstatJobYARN <inputPath> <day>")
+      System.exit(1)
+    }
+
+    val Array(inputPath,day) = args
+
+    val spark = SparkSession.builder()
+//      .config("spark.sql.sources.partitionColumnTypeInference.enabled",false)
+      .config("spark.sql.shuffle.partitions",100)
       .getOrCreate()
 
 
-    val accessDF = spark.read.parquet("file:///Users/duanjiaxing/data/clean")
+    val accessDF = spark.read.parquet(inputPath)
 //    accessDF.printSchema()
 //    accessDF.show(30,false)
 
-    val day = "20170511"
 //    删除某天的数据
     StatDAO.deleteData(day)
 
